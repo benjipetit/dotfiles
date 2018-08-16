@@ -1,0 +1,20 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
+[user]
+	name = Benjamin Petit
+	email = benjamin.petit@icloud.com
+[push]
+	default = simple
+[alias]
+    st = status
+    co = checkout
+[branch]
+	autosetuprebase = always
+
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
