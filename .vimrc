@@ -7,7 +7,6 @@ set expandtab
 set hlsearch " highlight all search results
 set cursorline " highlight current line
 set vb " remove audio bell 
-set laststatus=2 " always show the status bar
 
 " enable syntax highligthing
 syntax on
@@ -49,9 +48,6 @@ let g:syntastic_shell = "/bin/zsh"
 " Syntastic checkers
 let g:syntastic_swift_checkers = ['swiftlint']
 
-" enable mouse 
-set mouse=a
-
 " highlight for search results
 :set hlsearch
 
@@ -64,20 +60,58 @@ set path+=**
 " display a menu when multiple files match a ':find' command
 set wildmenu
 
-" we use a dark background
-:set background=dark
+" A more complete status line
+" (https://gist.github.com/meskarune/57b613907ebd1df67eb7bdb83c6e6641)
 
-" put git status, column/row number, total lines, and percentage in status
-set statusline=%F%m%r%h%w\ [%l,%c]\ [%L,%p%%]
+" status bar colors
+au InsertEnter * hi StatusLine guifg=black guibg=#d7afff ctermbg=black ctermfg=magenta
+au InsertLeave * hi StatusLine guifg=black guibg=#8fbfdc ctermbg=black ctermfg=cyan
+hi StatusLine guifg=black guibg=#8fbfdc ctermbg=black ctermfg=cyan
 
-" Setup some custom colors
-highlight StatusLine ctermbg=240 ctermfg=12
+" Status Line Custom
+let g:currentmode={
+    \ "n"  : "Normal",
+    \ "no" : "Normal·Operator Pending",
+    \ "v"  : "Visual",
+    \ "V"  : "V·Line",
+    \ "\<C-V>" : "V·Block",
+    \ "s"  : "Select",
+    \ "S"  : "S·Line",
+    \ "^S" : "S·Block",
+    \ "i"  : "Insert",
+    \ "R"  : "Replace",
+    \ "Rv" : "V·Replace",
+    \ "c"  : "Command",
+    \ "cv" : "Vim Ex",
+    \ "ce" : "Ex",
+    \ "r"  : "Prompt",
+    \ "rm" : "More",
+    \ "r?" : "Confirm",
+    \ "!"  : "Shell",
+    \ "t"  : "Terminal"
+    \}
 
-" highlight the status bar when in insert mode
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
-endif
+set laststatus=2 " always show the status bar
+set noshowmode
+
+set statusline=
+set statusline+=%0*\ %n\                                 " Buffer number
+set statusline+=%1*\ %<%F%m%r%h%w\                       " File path, modified, readonly, helpfile, preview
+set statusline+=%3*│                                     " Separator
+set statusline+=%2*\ %Y\                                 " FileType
+set statusline+=%3*│                                     " Separator
+set statusline+=%2*\ %{''.(&fenc!=''?&fenc:&enc).''}     " Encoding
+set statusline+=\ (%{&ff})                               " FileFormat (dos/unix..)
+set statusline+=%=                                       " Right Side
+set statusline+=%2*\ col:\ %02v\                         " Colomn number
+set statusline+=%3*│                                     " Separator
+set statusline+=%1*\ ln:\ %02l/%L\ (%3p%%)\              " Line number / total lines, percentage of document
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\  " The current mode
+
+hi User1 ctermbg=239 ctermfg=254 guibg=#4e4e4e guifg=#adadad
+hi User2 ctermbg=236 ctermfg=254 guibg=#303030 guifg=#adadad
+hi User3 ctermbg=236 ctermfg=236 guibg=#303030 guifg=#303030
+hi User4 ctermbg=239 ctermfg=255 guibg=#4e4e4e guifg=#4e4e4e
 
 " file skeletons
 autocmd BufNewFile  *.swift   0r ~/.vim/templates/viewController.swift
