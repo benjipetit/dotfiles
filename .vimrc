@@ -8,6 +8,11 @@ set hlsearch " highlight all search results
 set cursorline " highlight current line
 set vb " remove audio bell 
 
+" unable copy-pasting with system clipboard using <Ctrl-C> and <Ctrl-V>
+" Cmd is not mappable in Vim in the terminal
+vnoremap <C-c> :w !pbcopy<CR><CR> 
+noremap <C-v> :r !pbpaste<CR><CR>
+
 " enable syntax highligthing
 syntax on
 
