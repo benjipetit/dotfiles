@@ -8,7 +8,7 @@ cp .gitconfig ~/.gitconfig
 cp .zshrc ~/.zshrc
 
 mkdir -p ~/.vim/after/ftplugin
-cp -a after/ftplugin ~/.vim/after/ftplugin
+cp -a after/ftplugin/ ~/.vim/after/ftplugin
 
 echo 'Done'
 
