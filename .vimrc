@@ -1,12 +1,16 @@
+" Allow language specific settings
+filetype plugin on
+filetype plugin indent on
+
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
 set hlsearch " highlight all search results
 set cursorline " highlight current line
-set vb " remove audio bell 
 
 " unable copy-pasting with system clipboard using <Ctrl-C> and <Ctrl-V>
 " Cmd is not mappable in Vim in the terminal
@@ -120,3 +124,4 @@ hi User4 ctermbg=239 ctermfg=255 guibg=#4e4e4e guifg=#4e4e4e
 
 " file skeletons
 autocmd BufNewFile  *.swift   0r ~/.vim/templates/viewController.swift
+
