@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+# make the command line behave like vi
+set -o vi
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
