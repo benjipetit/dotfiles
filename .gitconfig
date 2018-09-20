@@ -18,3 +18,5 @@
 	prompt = false
 [mergetool]
 	prompt = false
+[credential]
+	helper = osxkeychain
