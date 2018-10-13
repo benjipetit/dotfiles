@@ -1,6 +1,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# use pyenv version of python
+eval "$(pyenv init -)"
+
 # make the command line behave like vi
 set -o vi
 
@@ -50,7 +56,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/code/utils/scripts:~/.local/bin"
+export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/code/utils/scripts:~/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f .private_aliases ] && source .private_aliases
+[ -f .private_env ] && source .private_env
 alias ll="ls -ahlvp"
 alias weather="curl wttr.in"
 
