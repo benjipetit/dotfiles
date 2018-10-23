@@ -2,6 +2,10 @@
 filetype plugin on
 filetype plugin indent on
 
+"
+" defaults for indentation/tabs
+"
+
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -12,7 +16,34 @@ set expandtab
 set hlsearch " highlight all search results
 set cursorline " highlight current line
 
+"
+" make netrw work like NerdTree
+"
+
+" tree view for folders hierarchy
+let g:netrw_liststyle = 3
+
+" removes the help banner
+let g:netrw_banner = 0
+
+" opens files in an vertical split
+let g:netrw_browse_split = 4
+
+" vertical drawer
+let g:netrw_altv = 1
+
+" set the size of the drawer
+let g:netrw_winsize = 15
+
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
+
+"
 " mappings
+"
+
 let mapleader = ","
 
 " unable copy-pasting with system clipboard using <Ctrl-C> and <Ctrl-V>
@@ -33,12 +64,34 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <Leader>, :Vexplore<Enter>
+
+"
+" Misc options
+"
+
 " enable syntax highligthing
 syntax on
 
 " Enable relative line number
 set number
 set relativenumber
+
+" highlight for search results
+:set hlsearch
+
+" case insensitive search
+:set ignorecase
+
+" recursive search with ':find'
+set path+=**
+
+" display a menu when multiple files match a ':find' command
+set wildmenu
+
+"
+" various plugins (todo: clean these)
+"
 
 " enable fzf (fuzzy finder)
 set rtp+=~/.fzf
@@ -73,20 +126,10 @@ let g:syntastic_shell = "/bin/zsh"
 " Syntastic checkers
 let g:syntastic_swift_checkers = ['swiftlint']
 
-" highlight for search results
-:set hlsearch
-
-" case insensitive search
-:set ignorecase
-
-" recursive search with ':find'
-set path+=**
-
-" display a menu when multiple files match a ':find' command
-set wildmenu
-
+"
 " A more complete status line
 " (https://gist.github.com/meskarune/57b613907ebd1df67eb7bdb83c6e6641)
+"
 
 " status bar colors
 au InsertEnter * hi StatusLine guifg=black guibg=#d7afff ctermbg=black ctermfg=magenta
@@ -138,6 +181,9 @@ hi User2 ctermbg=236 ctermfg=254 guibg=#303030 guifg=#adadad
 hi User3 ctermbg=236 ctermfg=236 guibg=#303030 guifg=#303030
 hi User4 ctermbg=239 ctermfg=255 guibg=#4e4e4e guifg=#4e4e4e
 
-" file skeletons
+"
+" file skeletons (todo: assess)
+"
+
 autocmd BufNewFile  *.swift   0r ~/.vim/templates/viewController.swift
 
