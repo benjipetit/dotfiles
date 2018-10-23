@@ -12,14 +12,20 @@ set expandtab
 set hlsearch " highlight all search results
 set cursorline " highlight current line
 
+" mappings
+let mapleader = ","
+
 " unable copy-pasting with system clipboard using <Ctrl-C> and <Ctrl-V>
 " Cmd is not mappable in Vim in the terminal
 vnoremap <C-c> :w !pbcopy<CR><CR> 
 noremap <C-v> :r !pbpaste<CR><CR>
 
 " Open splits easily
-nnoremap <C-S> :sp<CR>
-nnoremap <C-N> :vsp<CR>
+nnoremap <leader>s :sp<CR>
+nnoremap <leader>v :vsp<CR>
+
+" Close all splits but current
+nnoremap <leader>o <C-W>o
 
 " Move between splits with Ctrl + move keys
 nnoremap <C-J> <C-W><C-J>
