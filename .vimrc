@@ -17,6 +17,12 @@ set cursorline " highlight current line
 vnoremap <C-c> :w !pbcopy<CR><CR> 
 noremap <C-v> :r !pbpaste<CR><CR>
 
+" Move between splits with Ctrl + move keys
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " enable syntax highligthing
 syntax on
 
