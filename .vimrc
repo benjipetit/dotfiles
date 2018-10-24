@@ -48,23 +48,23 @@ let mapleader = ","
 
 " unable copy-pasting with system clipboard using <Ctrl-C> and <Ctrl-V>
 " Cmd is not mappable in Vim in the terminal
-vnoremap <C-c> :w !pbcopy<CR><CR> 
-noremap <C-v> :r !pbpaste<CR><CR>
+vnoremap <Leader>c :w !pbcopy<CR><CR> 
+noremap <Leader>v :r !pbpaste<CR><CR>
 
 " Open splits easily
-nnoremap <leader>s :sp<CR>
-nnoremap <leader>v :vsp<CR>
+nnoremap <Leader>o :sp<CR>
+nnoremap <Leader>. :vsp<CR>
 
 " Close all splits but current
-nnoremap <leader>o <C-W>o
+nnoremap <leader>, <C-W>o
 
 " Move between splits with Ctrl + move keys
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <Leader>h <C-W><C-H>
 
-nnoremap <Leader>, :Vexplore<Enter>
+nnoremap <Leader>' :Vexplore<Enter>
 
 "
 " Misc options
