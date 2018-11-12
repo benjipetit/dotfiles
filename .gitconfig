@@ -23,3 +23,7 @@
 	tool = vimdiff
     # Be able to abort all diffs with `:cq` or `:cquit`
     trustExitCode = true
+[credential]
+	helper = osxkeychain
+[credential "https://bitbucket.org"]
+    username = benjaminpetit
