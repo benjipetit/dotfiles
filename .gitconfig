@@ -11,12 +11,15 @@
     co = checkout
 [branch]
 	autosetuprebase = always
-
 [merge]
 	tool = vimdiff
+    # Be able to abort all diffs with `:cq` or `:cquit`
+    trustExitCode = true
 [difftool]
 	prompt = false
 [mergetool]
 	prompt = false
-[credential]
-	helper = osxkeychain
+[diff]
+	tool = vimdiff
+    # Be able to abort all diffs with `:cq` or `:cquit`
+    trustExitCode = true
