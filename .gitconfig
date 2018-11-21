@@ -3,7 +3,7 @@
 	editor = /usr/bin/vim
 [user]
 	name = Benjamin Petit
-	email = benjamin.petit@icloud.com
+	email = benjamin.petit@tide.co
 [push]
 	default = simple
 [alias]
