@@ -92,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f .private_env ] && source .private_env
 alias ll="ls -ahlvp"
 alias weather="curl wttr.in"
+alias ctags="`brew --prefix`/bin/ctags" # use brew installation for ctags (install with `brew install ctags`)
 
 # Git
 alias ga="git add ."
