@@ -96,6 +96,9 @@ set wildmenu
 " enable fzf (fuzzy finder)
 set rtp+=~/.fzf
 
+" Find tags in the 'tags' file
+set tags=tags
+
 call plug#begin('~/.vim/plugged')
 
 " Swift syntax and syntastic

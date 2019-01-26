@@ -6,6 +6,7 @@ echo 'copying dotfiles from system in repository'
 cp ~/.vimrc .
 cp ~/.gitconfig .
 cp ~/.zshrc .
+cp ~/.ctags .
 
 mkdir -p after/ftplugin
 cp -a ~/.vim/after/ftplugin/ after/ftplugin
