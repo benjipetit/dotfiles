@@ -108,6 +108,9 @@ Plug 'keith/swift.vim'
 " Ctrl-p (fuzzy search)
 Plug 'kien/ctrlp.vim'
 
+" TagBar (class outline viewer)
+Plug 'majutsushi/tagbar'
+
 " Snipmate and dependencies
 Plug 'marcweber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
