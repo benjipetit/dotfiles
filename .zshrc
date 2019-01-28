@@ -113,10 +113,6 @@ alias gday="git shortlog -sn --since=$(date -v-1d +%F)"
 alias gweek="git shortlog -sn --since=$(date -v-1w +%F)"
 alias gmonth="git shortlog -sn --since=$(date -v-1m +%F)"
 
-autoload -U promptinit; promptinit
-prompt pure
-
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
