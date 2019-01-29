@@ -59,10 +59,15 @@ plugins=(git)
 
 # User configuration
 
-if [[ -z $TMUX ]]; then
-    export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/scripts-private:~/code/utils/scripts:~/.local/bin"
-fi
-# export MANPATH="/usr/local/man:$MANPATH"
+# PATH: 
+# support for pyenv
+export PATH="$(pyenv root)/shims"
+
+# standard binaries directories
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# personal scripts
+export PATH="$PATH:~/scripts-private:~/code/utils/scripts:~/.local/bin"
 
 source $ZSH/oh-my-zsh.sh
 # source /Users/benjamin/code/tide/swift-app/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
