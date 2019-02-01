@@ -191,5 +191,5 @@ hi User4 ctermbg=239 ctermfg=255 guibg=#4e4e4e guifg=#4e4e4e
 " file skeletons (todo: assess)
 "
 
-autocmd BufNewFile  *.swift   0r ~/.vim/templates/viewController.swift
+" autocmd BufNewFile  *.swift   0r ~/.vim/templates/viewController.swift
 
