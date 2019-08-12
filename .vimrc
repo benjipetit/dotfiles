@@ -66,6 +66,9 @@ nnoremap <Leader>h <C-W><C-H>
 
 nnoremap <Leader>' :Vexplore<Enter>
 
+nnoremap <Leader>? :CtrlPTag<Enter>
+nnoremap <Leader>+ :TagbarToggle<Enter>
+
 "
 " Misc options
 "
