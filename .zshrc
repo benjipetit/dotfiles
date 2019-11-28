@@ -113,6 +113,8 @@ alias stash="git stash save"
 alias pop="git stash pop"
 alias br="git co -b"
 alias push="git push"
+alias prune="git remote prune origin"
+alias pprune="git gc --prune=now"
 
 alias gday="git shortlog -sn --since=$(date -v-1d +%F)"
 alias gweek="git shortlog -sn --since=$(date -v-1w +%F)"
