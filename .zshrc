@@ -114,7 +114,8 @@ alias pop="git stash pop"
 alias br="git co -b"
 alias push="git push"
 alias prune="git remote prune origin"
-alias pprune="git gc --prune=now"
+alias pruner="git gc --prune=now"
+alias prunest="prune && pruner"
 
 alias gday="git shortlog -sn --since=$(date -v-1d +%F)"
 alias gweek="git shortlog -sn --since=$(date -v-1w +%F)"
@@ -130,11 +131,11 @@ export NNN_TMPFILE="/tmp/nnn"
 
 n()
 {
-        nnn "$@"
+    nnn "$@"
 
-        if [ -f $NNN_TMPFILE ]; then
-                . $NNN_TMPFILE
-                rm $NNN_TMPFILE
-        fi
+    if [ -f $NNN_TMPFILE ]; then
+        . $NNN_TMPFILE
+        rm $NNN_TMPFILE
+    fi
 }
 
