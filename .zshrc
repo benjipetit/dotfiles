@@ -63,8 +63,14 @@ plugins=(git)
 # support for pyenv
 export PATH="$(pyenv root)/shims"
 
+# support for ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # standard binaries directories
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# support for Haskell projects
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # personal scripts
 export PATH="$PATH:~/scripts-private:~/code/utils/scripts:~/.local/bin"
