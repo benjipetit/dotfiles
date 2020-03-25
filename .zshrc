@@ -69,6 +69,9 @@ export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # personal scripts
 export PATH="$PATH:~/scripts-private:~/code/utils/scripts:~/.local/bin"
 
+# aws cli
+export PATH="/Users/ben/.ebcli-virtual-env/executables:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 # source /Users/benjamin/code/tide/swift-app/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
