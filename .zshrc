@@ -63,8 +63,14 @@ plugins=(git)
 # support for pyenv
 export PATH="$(pyenv root)/shims"
 
+# support for ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # standard binaries directories
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# support for Haskell projects
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # personal scripts
 export PATH="$PATH:~/scripts-private:~/code/utils/scripts:~/.local/bin"
@@ -99,10 +105,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[ -f .private_aliases ] && source .private_aliases
-[ -f .private_env ] && source .private_env
+[ -f ~/.private_aliases ] && source ~/.private_aliases
+[ -f ~/.private_env ] && source ~/.private_env
 alias ll="ls -ahlvp"
 alias weather="curl wttr.in"
+alias covid="curl https://corona-stats.online?top=30"
 alias ctags="`brew --prefix`/bin/ctags" # use brew installation for ctags (install with `brew install ctags`)
 
 # Git
@@ -116,6 +123,9 @@ alias stash="git stash save"
 alias pop="git stash pop"
 alias br="git co -b"
 alias push="git push"
+alias prune="git remote prune origin"
+alias pruner="git gc --prune=now"
+alias prunest="prune && pruner"
 
 alias gday="git shortlog -sn --since=$(date -v-1d +%F)"
 alias gweek="git shortlog -sn --since=$(date -v-1w +%F)"
@@ -131,11 +141,11 @@ export NNN_TMPFILE="/tmp/nnn"
 
 n()
 {
-        nnn "$@"
+    nnn "$@"
 
-        if [ -f $NNN_TMPFILE ]; then
-                . $NNN_TMPFILE
-                rm $NNN_TMPFILE
-        fi
+    if [ -f $NNN_TMPFILE ]; then
+        . $NNN_TMPFILE
+        rm $NNN_TMPFILE
+    fi
 }
 

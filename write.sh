@@ -7,6 +7,7 @@ cp .vimrc ~/.vimrc
 cp .gitconfig ~/.gitconfig
 cp .zshrc ~/.zshrc
 cp .ctags ~/.ctags
+cp .tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.vim/after/ftplugin
 cp -a after/ftplugin/ ~/.vim/after/ftplugin
