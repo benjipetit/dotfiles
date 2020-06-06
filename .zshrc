@@ -7,6 +7,9 @@ export LANG=en_US.UTF-8
 # use pyenv version of python
 eval "$(pyenv init -)"
 
+# use rbenv version of ruby
+eval "$(rbenv init -)"
+
 # use a theme I like
 ZSH_THEME=lambda
 
@@ -64,7 +67,8 @@ plugins=(git bitbucket-git-helpers)
 export PATH="$(pyenv root)/shims"
 
 # support for ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 # standard binaries directories
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
