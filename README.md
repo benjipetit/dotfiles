@@ -1,5 +1,7 @@
 # dotfiles
 
+Some of my dotfiles. I use Zsh.
+
 ### Installation
 
 Run the 'write' script, that will copy the dotfiles on your system:
