@@ -55,7 +55,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git bitbucket-git-helpers)
 
 # User configuration
 
@@ -77,6 +77,9 @@ export PATH="$PATH:~/scripts-private:~/code/utils/scripts:~/.local/bin"
 
 # aws cli
 export PATH="/Users/ben/.ebcli-virtual-env/executables:$PATH"
+
+# Flutter
+export PATH="$PATH:/opt/flutter/bin"
 
 source $ZSH/oh-my-zsh.sh
 # source /Users/benjamin/code/tide/swift-app/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -148,4 +151,12 @@ n()
         rm $NNN_TMPFILE
     fi
 }
+
+# Ruby
+
+# ruby-build:
+# ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following to your .zshrc
+# Note: this may interfere with building old versions of Ruby (e.g <2.4) that use OpenSSL <1.1.
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
