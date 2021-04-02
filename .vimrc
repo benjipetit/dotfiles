@@ -69,6 +69,9 @@ nnoremap <Leader>' :Vexplore<Enter>
 nnoremap <Leader>? :CtrlPTag<Enter>
 nnoremap <Leader>+ :TagbarToggle<Enter>
 
+" ZZ to close the current pane
+nnoremap ZZ :wq!<Enter>
+
 "
 " Misc options
 "
