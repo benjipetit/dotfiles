@@ -125,6 +125,8 @@ _exists() { (( $+commands[$1] )) }
 
 _exists nvim && alias vim='nvim'
 
+unfunction _exists
+
 alias ll="ls -ahlvp"
 alias weather="curl wttr.in"
 alias covid='curl "https://corona-stats.online?top=30"'
