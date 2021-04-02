@@ -83,7 +83,8 @@ export PATH="$PATH:~/scripts-private:~/code/utils/scripts:~/.local/bin"
 export PATH="/Users/ben/.ebcli-virtual-env/executables:$PATH"
 
 # Flutter
-export PATH="$PATH:/opt/flutter/bin"
+# export PATH="$PATH:/opt/flutter/bin"
+source ~/.private_path
 
 source $ZSH/oh-my-zsh.sh
 # source /Users/benjamin/code/tide/swift-app/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
