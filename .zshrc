@@ -86,6 +86,11 @@ export PATH="/Users/ben/.ebcli-virtual-env/executables:$PATH"
 # export PATH="$PATH:/opt/flutter/bin"
 source ~/.private_path
 
+# Java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+export PATH="$PATH:$JAVA_HOME"
+export PATH="$PATH:/opt/maven/bin"
+
 source $ZSH/oh-my-zsh.sh
 # source /Users/benjamin/code/tide/swift-app/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -165,3 +170,9 @@ n()
 # Note: this may interfere with building old versions of Ruby (e.g <2.4) that use OpenSSL <1.1.
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ben/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ben/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ben/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ben/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
