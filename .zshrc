@@ -120,6 +120,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f ~/.private_aliases ] && source ~/.private_aliases
 [ -f ~/.private_env ] && source ~/.private_env
+
+_exists() { (( $+commands[$1] )) }
+
+_exists nvim && alias vim='nvim'
+
 alias ll="ls -ahlvp"
 alias weather="curl wttr.in"
 alias covid='curl "https://corona-stats.online?top=30"'
