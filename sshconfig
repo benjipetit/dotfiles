@@ -1,3 +1,0 @@
-# prevent git from asking for ssh key passphrase every time
-Host *
-    UseKeychain yes

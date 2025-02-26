@@ -1,36 +1,9 @@
-[core]
-	excludesfile = ~/.gitignore_global
-	editor = /usr/bin/vim
 [user]
 	name = Benjamin Petit
 	email = benjamin.petit@me.com
-[push]
-	default = simple
-[alias]
-    st = status
-    co = checkout
-[branch]
-	autosetuprebase = always
-[merge]
-	tool = vimdiff
-    # Be able to abort all diffs with `:cq` or `:cquit`
-    trustExitCode = true
-[difftool]
-	prompt = false
-[mergetool]
-	prompt = false
-[diff]
-	tool = vimdiff
-    # Be able to abort all diffs with `:cq` or `:cquit`
-    trustExitCode = true
-[credential]
-	helper = osxkeychain
-[credential "https://bitbucket.org"]
-    username = benjaminpetit
-[credential "https://github.com"]
-    username = benjipetit
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+	username = benjipetit
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+
