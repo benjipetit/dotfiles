@@ -101,12 +101,49 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    # foundation
     ghostty
     neovim
     git
     gh
     lazygit
     stow
+
+    # apps
+    _1password-gui
+    obsidian
+    ollama
+
+    # code
+    gcc14
+    zig
+    rustc
+    rustup
+    cargo
+    go
+    ruby
+    python314
+    nodejs_23
+    jdk17
+    ghc
+
+    # tools
+    gnumake
+    android-studio
+    android-tools
+    vscode
+    qemu
+    jq
+    curl
+    fzf
+    unzip
+    zip
+    xz
+    libGLU
+    ripgrep
+    fd
+    docker
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
